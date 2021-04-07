@@ -1,0 +1,70 @@
+<div class="content">
+    <mat-button-toggle-group #group="matButtonToggleGroup">
+        <mat-button-toggle value="application-view" aria-label="Text align left">
+            By Application
+        </mat-button-toggle>
+        <mat-button-toggle value="plant-view" aria-label="Text align center">
+            By Plant
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+    <div class="example-selected-value">Selected value: {{group.value}}</div>
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let num of [1,2,3,4,5,6,7]">
+            <mat-card class="mat-elevation-z4">
+                <mat-card-header>
+                    <mat-card-title>Mountains {{num}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content *ngIf="group.value == 'plant-view'">
+                    <div class="image-section">
+                        <img src="../../assets/dummy.png">
+                    </div>
+                    <div class="list-section">
+                        <mat-list role="list" [ngClass]="{'list-single-col': group.value == 'plant-view', 'list-side-by-side': group.value != 'plant-view' }">
+                            <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                            <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                            <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                            <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                            <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                            <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                            <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                            <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                            <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                            <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                            <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                            <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                        </mat-list>
+                    </div>
+                </mat-card-content>
+
+                <mat-card-content *ngIf="group.value != 'plant-view'">
+                    <p class="card-content">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+                        mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
+                        quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
+                        rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+                        Integer tincidunt.
+                    </p>
+                    <mat-list role="list" [ngClass]="{'list-single-col': group.value == 'plant-view', 'list-side-by-side': group.value != 'plant-view' }">
+                        <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                        <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                        <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                        <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                        <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                        <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                        <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                        <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                        <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                        <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                        <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                        <mat-list-item role="listitem">commodo ligula eget</mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+                <!--           <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions> -->
+            </mat-card>
+        </div>
+    </div>
+</div>
